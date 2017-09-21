@@ -26,11 +26,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 public interface PetRepository extends JpaRepository<Pet, Integer> {
 
-    @Query("SELECT ptype FROM PetType ptype ORDER BY ptype.name")
-    @Transactional(readOnly = true)
-    List<PetType> findPetTypes();
-
-    List<Pet> findByBirthDateBetweenOrderByBirthDateAsc(Date d1, Date d2);
+    
     
 }
 

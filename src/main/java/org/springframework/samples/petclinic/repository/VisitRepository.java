@@ -23,7 +23,6 @@ import org.springframework.samples.petclinic.model.Visit;
 public interface VisitRepository extends JpaRepository<Visit, Integer> {
 
     List<Visit> findByPetId(Integer petId);
-    
-    List<Visit> findTop3ByOrderByDateDesc();
-    
+   
+   
 }
