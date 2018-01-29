@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Spring Thymeleaf example</title>
+    </head>
+    <body>
+        
+        <p th:text="'Mascota recuperada de nombre ' + ${pet.name} + ', de tipo ' + ${pet.type.name}" />
+        
+    </body>
+</html>
