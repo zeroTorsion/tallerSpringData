@@ -33,7 +33,7 @@ public class BillController {
 	
 	// En este caso estamos devolviendo un ResponseEntity para indicar los posibles estado de la respuesta (OK, KO).
 	// Lo más adecuado sería encapsular los errores en una clase y manejar las excepciones en caso de que sea necesario
-//	@RequestMapping(value="/bills/{idBill}", method=RequestMethod.GET)
+//	@RequestMapping(value="/bills/{idBill}", method=RequestMethod.POST)
 //	public ResponseEntity<Bill> findByIdOption2(@PathVariable("idBill") Integer id) {
 //		Bill b = new Bill();
 //		b = this.billService.findById(id);
