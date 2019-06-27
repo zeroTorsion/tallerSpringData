@@ -16,14 +16,18 @@
 
 package org.springframework.samples.petclinic;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.samples.petclinic.repository.SpecialityRepository;
 import org.springframework.samples.petclinic.repository.VetRepository;
+import org.springframework.samples.petclinic.model.Vet;
 
 /**
  * PetClinic Spring Boot Application.
@@ -33,6 +37,8 @@ import org.springframework.samples.petclinic.repository.VetRepository;
  */
 @SpringBootApplication
 public class PetClinicApplication {
+	@Autowired
+	VetRepository vetRepository;
 	
 	private static final Logger log = LoggerFactory.getLogger(PetClinicApplication.class);
 
@@ -46,8 +52,13 @@ public class PetClinicApplication {
 			log.info("*****************************************************");
 			log.info("BOOTCAMP - Spring y Spring Data - vetRepository");
 			log.info("*****************************************************");
+
+			List<Vet> vets = vetRepository.findAll();
 			
-			//TODO Añade aquí tu código
+			for(Vet vet : vets) {
+				log.info(vet.toString());
+			}
+			
 		};
 	}
     
