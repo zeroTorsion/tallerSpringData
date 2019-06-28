@@ -6,7 +6,7 @@ import org.springframework.samples.petclinic.model.Specialty;
 import org.springframework.stereotype.Repository;
 
 public interface SpecialityRepository extends JpaRepository<Specialty, Integer>{
-	
+	//no es necesario definir nada aquí porque es un comando sql de spring
 	Specialty findFirstByName(String name);
 
 }
