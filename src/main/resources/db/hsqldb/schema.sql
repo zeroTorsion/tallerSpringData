@@ -6,14 +6,6 @@ DROP TABLE pets IF EXISTS;
 DROP TABLE types IF EXISTS;
 DROP TABLE owners IF EXISTS;
 
-DROP TABLE facturas IF EXISTS;
-
-CREATE TABLE facturas (
-  id INTEGER IDENTITY PRIMARY KEY,
-  id_number INTEGER NOT NULL,
-  money DOUBLE NOT NULL,
-  payment_date DATE NULL
-);
 
 CREATE TABLE vets (
   id         INTEGER IDENTITY PRIMARY KEY,
@@ -66,13 +58,7 @@ CREATE TABLE visits (
   id          INTEGER IDENTITY PRIMARY KEY,
   pet_id      INTEGER NOT NULL,
   visit_date  DATE,
-  description VARCHAR(255),
-  bill_id     INTEGER NULL
+  description VARCHAR(255)
 );
 ALTER TABLE visits ADD CONSTRAINT fk_visits_pets FOREIGN KEY (pet_id) REFERENCES pets (id);
-ALTER TABLE visits ADD CONSTRAINT fk_visits_bills FOREIGN KEY (bill_id) REFERENCES facturas (id);
 CREATE INDEX visits_pet_id ON visits (pet_id);
-
-
-
-
